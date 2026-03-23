@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Premium Version of You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --cream: #FFFDD0;
+            --dark-cocoa: #1a0f0d;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background-color: var(--dark-cocoa);
+            color: var(--cream);
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Music Overlay - The "Entrance" */
+        #overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--dark-cocoa);
+            display: flex; flex-direction: column; justify-content: center;
+            align-items: center; z-index: 1000; transition: 1s;
+        }
+
+        #enter-btn {
+            padding: 15px 40px; border: 1px solid var(--gold);
+            background: transparent; color: var(--gold);
+            font-family: 'Playfair Display', serif; font-size: 1.5rem;
+            cursor: pointer; border-radius: 50px;
+        }
+
+        #enter-btn:hover { background: var(--gold); color: var(--dark-cocoa); }
+
+        .section {
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; padding: 40px;
+            text-align: center; opacity: 0; transform: translateY(30px);
+            transition: all 1.5s ease-out;
+        }
+
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('slay.jpg');
+            background-size: cover; background-position: center;
+        }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); }
+        .content-box { max-width: 700px; line-height: 1.8; font-size: 1.1rem; }
+        .naija-accent { color: var(--gold); font-weight: 600; }
+
+        .belch-btn {
+            margin-top: 20px; padding: 15px; border: 1px solid var(--gold);
+            border-radius: 10px; cursor: pointer; font-weight: bold;
+        }
+
+        .media-frame {
+            width: 300px; height: 450px; border-radius: 15px;
+            object-fit: cover; margin: 20px; border: 2px solid var(--gold);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="overlay">
+        <h2 style="font-family: 'Playfair Display'; margin-bottom: 20px;">For the Original GOAT</h2>
+        <button id="enter-btn" onclick="startExperience()">Enter the Experience</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="section hero">
+        <h1>The Golden Hour.</h1>
+        <p>A Digital Epistle for a Premium Soul</p>
+    </div>
+
+    <div class="section">
+        <div class="content-box">
+            <h1>Luxury Personified.</h1>
+            <p>Omo, let’s just be real—your steeze is on a different level. It’s the way you carry yourself, that natural <span class="naija-accent">'rich girl' energy</span>. You have always been a masterpiece, and your glow is 100% you. You are the original 'Soft Life' personified.</p>
+        </div>
+        <img src="smile.jpg" class="media-frame" alt="Queen">
+    </div>
+
+    <div class="section" style="background: #251614;">
+        <div class="content-box">
+            <h1>You Are Not Alone.</h1>
+            <p>I know life has been 'loud' lately, and the heart needs time to settle. It's okay. People play their roles, and we thank God for the lessons, but that chapter isn't the whole book. <br><br> <span class="naija-accent">I’m in your corner 24/7.</span> You are too precious to ever walk this path by yourself.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="content-box">
+            <h1>The "Belge" Factor. 🐐</h1>
+            <p>But abeg, how can someone so aesthetic still <span class="naija-accent">belch like a literal mountain goat?</span> Honestly, it’s a talent. One minute you're a fashion queen, the next you're causing earthquakes. If anyone doesn't see you're the full premium package, that's their loss!</p>
+            
+            <div class="belch-btn" onclick="playGoat()">CLICK FOR THE GOAT 🔊</div>
+            <audio id="goatAudio" src="belch.mp4"></audio>
+        </div>
+    </div>
+
+    <script>
+        function startExperience() {
+            document.getElementById('overlay').style.opacity = '0';
+            setTimeout(() => { document.getElementById('overlay').style.display = 'none'; }, 1000);
+            document.getElementById('bgMusic').play();
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.section').forEach(section => { observer.observe(section); });
+
+        function playGoat() { document.getElementById('goatAudio').play(); }
+    </script>
+</body>
+</html>
+
