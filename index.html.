@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Premium Version of You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #D4AF37; --cream: #FFFDD0; --dark: #0a0a0a; }
+        body, html { margin: 0; padding: 0; background: var(--dark); color: var(--cream); font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        
+        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--dark); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; transition: 1.5s; }
+        #enter-btn { padding: 18px 50px; border: 1px solid var(--gold); background: transparent; color: var(--gold); font-family: 'Playfair Display'; font-size: 1.3rem; cursor: pointer; border-radius: 50px; letter-spacing: 3px; }
+
+        .section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px 25px; text-align: center; opacity: 0; transform: translateY(40px); transition: all 1.5s ease-out; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+        
+        .content-box { max-width: 850px; line-height: 2.2; font-size: 1.15rem; margin-bottom: 40px; text-align: center; }
+        h1 { font-family: 'Playfair Display'; font-size: 3.8rem; color: var(--gold); margin-bottom: 25px; font-style: italic; }
+        .naija { color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        .media-container { width: 95%; max-width: 420px; border: 1px solid rgba(212, 175, 55, 0.2); padding: 12px; border-radius: 20px; background: rgba(255, 255, 255, 0.03); margin: 15px auto; }
+        img, video { width: 100%; border-radius: 12px; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; width: 100%; max-width: 1000px; }
+        .vow-card { border-left: 3px solid var(--gold); padding-left: 20px; margin: 20px 0; text-align: left; background: rgba(212, 175, 55, 0.05); padding: 20px; border-radius: 0 15px 15px 0; }
+        
+        footer { padding: 120px 20px; border-top: 1px solid rgba(212, 175, 55, 0.3); margin-top: 60px; background: linear-gradient(to bottom, #0a0a0a, #1a1110); }
+    </style>
+</head>
+<body>
+
+    <div id="overlay">
+        <h2 style="font-family: 'Playfair Display'; margin-bottom: 30px; letter-spacing: 5px;">EXCLUSIVE FOR THE GOAT</h2>
+        <button id="enter-btn" onclick="startExperience()">OPEN THE EPISTLE</button>
+    </div>
+
+    <audio id="bgMusic" loop><source src="music.mp3" type="audio/mpeg"></audio>
+
+    <div class="section">
+        <h1>The Slay.</h1>
+        <div class="media-container"><img src="photo1.jpg"></div>
+        <p style="margin-top:20px; font-style: italic; color: var(--gold);">"Original Styll, No Imitation."</p>
+    </div>
+
+    <div class="section" style="background: #0f0f0f;">
+        <div class="content-box">
+            <h1>Expensive Grace.</h1>
+            <p>Omo, if we are being honest, your beauty is a problem for the public! It’s not just the sharp jawline or the way your eyes capture the light—it's that <span class="naija">Premium Steeze</span> you carry effortlessly. You make simplicity look like luxury. Whether you’re in your serious biochemistry mode or just catching vibes, you radiate a kind of light that cannot be dimmed. You are a masterpiece, a 1/1 limited edition. Never forget that you are the standard, the blueprint, and the vibe all in one.</p>
+        </div>
+        <div class="media-container"><video autoplay loop muted playsinline><source src="video1.mp4"></video></div>
+    </div>
+
+    <div class="section">
+        <div class="content-box">
+            <h1>The Sanctuary.</h1>
+            <p>Listen to me: I know life has been a bit 'loud' lately. I know the heart has been through it. But hear me clearly—you are never doing this life thing by yourself. <span class="naija">I am your person, 24/7.</span> When the world feels heavy and you just want to vanish for a bit, this is your safe space. It’s okay to have memories, it’s okay to feel, but it’s also okay to keep moving. You are far too precious to let anyone’s absence define your worth. You are a Whole Sun; you don't need anyone else to shine.</p>
+        </div>
+        <div class="grid">
+            <div class="media-container"><video autoplay loop muted playsinline><source src="video2.mp4"></video></div>
+            <div class="media-container"><img src="photo3.jpg"></div>
+            <div class="media-container"><video autoplay loop muted playsinline><source src="video3.mp4"></video></div>
+        </div>
+    </div>
+
+    <div class="section" style="background: #120b0a;">
+        <div class="content-box">
+            <h1>GOAT Behavior. 🐐</h1>
+            <p>But wait, let's talk about your real 'Belge'—the mountain goat within! How can someone look so aesthetic and then <span class="naija">belch with that kind of authority?</span> Honestly, it’s a talent! I love the fact that you’re not just a 'pretty face.' You’re witty, you’re real, and you’re a whole mood. From the lollipop vibes to the random bed-head videos, you are the GOAT of staying authentic.</p>
+        </div>
+        <div class="grid">
+            <div class="media-container"><video autoplay loop muted playsinline><source src="video4.mp4"></video></div>
+            <div class="media-container"><video autoplay loop muted playsinline><source src="video5.mp4"></video></div>
+            <div class="media-container"><video autoplay loop muted playsinline><source src="video6.mp4"></video></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="content-box">
+            <h1>The Vows.</h1>
+            <div class="vow-card">
+                <p>I vow to always be the one you can call when the "biochemistry" of life isn't adding up.</p>
+            </div>
+            <div class="vow-card">
+                <p>I vow to never judge your mountain goat belches, but to laugh with you every single time.</p>
+            </div>
+            <div class="vow-card">
+                <p>I vow to remind you of your steeze every day until you start seeing yourself the way I see you.</p>
+            </div>
+            <div class="vow-card">
+                <p>I vow to stay in your corner—through the slay, the tears, the laughter, and everything in between.</p>
+            </div>
+        </div>
+        <div class="media-container"><img src="photo2.jpg"></div>
+    </div>
+
+    <footer>
+        <div class="content-box">
+            <h1>Cheers to your Era.</h1>
+            <p>This is the beginning of the most peaceful, most aesthetic, and most beautiful chapter of your life. Keep your head high—the crown is heavy, but it was made for you.</p>
+            <p style="font-size: 2.2rem; margin-top: 40px; color: var(--gold);">Love you always, [Your Name]</p>
+        </div>
+    </footer>
+
+    <script>
+        function startExperience() {
+            document.getElementById('overlay').style.opacity = '0';
+            setTimeout(() => { document.getElementById('overlay').style.display = 'none'; }, 1500);
+            document.getElementById('bgMusic').play();
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.section').forEach(section => { observer.observe(section); });
+    </script>
+</body>
+</html>
+
